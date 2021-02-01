@@ -1,0 +1,23 @@
+{
+    "connectionString": "mongodb://localhost/node-mongo-signup-verification-api",
+    "secret": "pruebatokenxd",
+    "emailFrom": "pvargas9803@gmail.com",
+    "smtpOptions": {
+        "service": "gmail",
+        "host": "smtp.gmail.com",
+        "port": 587,
+        "auth": {
+            "user": "pvargas9803@gmail.com",
+            "pass": "pat700prime"
+        },
+        "tls": {
+            "rejectUnauthorized": false
+        }
+    },
+    "misDatos": {
+        "apiKey": "1F3BC55D-5DF3-45C3-9554-393L497DF0C6",
+        "secretKey": "09c8c3325664d73f0520801cdc7c0d8a7a40e6a3",
+        "apiURL": "https://sandbox.flow.cl/app",
+        "baseURL": "http://localhost/apiFlow"
+    }
+}
