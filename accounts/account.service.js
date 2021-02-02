@@ -5,8 +5,7 @@ const crypto = require("crypto");
 const sendEmail = require('_helpers/send-email');
 const db = require('_helpers/db');
 const Role = require('_helpers/role');
-const FlowApi = require("flowcl-node-api-client");
-const config = require("./config.json");
+
 
 module.exports = {
     authenticate,
@@ -28,7 +27,7 @@ async function authenticate({ email, password, ipAddress }) {
     const account = await db.Account.findOne({ email });
 
     if (!account || !account.isVerified || !bcrypt.compareSync(password, account.passwordHash)) {
-        throw 'Email or password is incorrect';
+        throw 'El correo o la password son incorrectos';
     }
 
     // authentication successful so generate jwt and refresh tokens
@@ -266,7 +265,7 @@ async function sendVerificationEmail(account, origin) {
 
     await sendEmail({
         to: account.email,
-        subject: 'Verificacion de Cuenta app motivate- Verificar email',
+        subject: 'MotivateApp- Verificar email',
         html: `<h4>Verificar Email</h4>
                <p>Gracias por registrarte!</p>
                ${message}`
