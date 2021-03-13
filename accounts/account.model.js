@@ -20,15 +20,15 @@ const schema = new Schema({
     updated: Date
 });
 
-schema.virtual('isVerified').get(function () {
+schema.virtual('isVerified').get(function() {
     return !!(this.verified || this.passwordReset);
 });
 
 schema.set('toJSON', {
     virtuals: true,
     versionKey: false,
-    transform: function (doc, ret) {
-        // remove these props when object is serialized
+    transform: function(doc, ret) {
+        // Elimina estos props cuando el objeto esta serializado
         delete ret._id;
         delete ret.passwordHash;
     }
